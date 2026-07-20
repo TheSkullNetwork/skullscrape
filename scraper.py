@@ -59,7 +59,7 @@ REPO_URL = f"https://github.com/{REPO_OWNER}/{REPO_NAME}"
 GITHUB_RAW_URL = f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/main/scraper.py"
 GITHUB_API_COMMITS = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/commits/main"
 
-VERSION_TAG = "v2.0.0"
+VERSION_TAG = "v1.0.0"
 
 EMAIL_RE = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
 PHONE_RE = r'(?<!\.)(?:\+?\d{1,3}[-\s]?)?\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4,6}(?!\.\d)'
@@ -67,7 +67,7 @@ PHONE_RE = r'(?<!\.)(?:\+?\d{1,3}[-\s]?)?\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4,6}(?!\.\
 SOCIAL_DOMAINS = ['twitter.com', 'x.com', 'linkedin.com', 'facebook.com',
                   'instagram.com', 'github.com', 'youtube.com', 'tiktok.com']
 
-USER_AGENT = 'Mozilla/5.0 (compatible; SkullScrape/2.0)'
+USER_AGENT = 'Mozilla/5.0 (compatible; SkullScrape/1.0)'
 
 
 def check_and_apply_update():
