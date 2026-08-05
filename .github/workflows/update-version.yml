@@ -1,0 +1,40 @@
+name: Auto Increment Version
+
+on:
+  push:
+    branches:
+      - main  
+
+permissions:
+  contents: write
+
+jobs:
+  auto-bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Calculate and Update Version
+        run: |
+          # Counts total commits in the repository
+          TOTAL_COMMITS=$(git rev-list --count HEAD)
+          
+          # Formats version as 0.1.<commit_count> (e.g., 0.1.42)
+          NEW_VERSION="0.1.${TOTAL_COMMITS}"
+          
+          # Replaces __version__ line in scraper.py
+          sed -i "s/__version__ = .*/__version__ = \"$NEW_VERSION\"/g" scraper.py
+          
+          echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+
+      - name: Commit Updated Version
+        run: |
+               git config user.name "github-actions[bot]"
+               git config user.email "41898282+github-actions[bot]@users.noreply.github.com"          
+          if ! git diff --quiet scraper.py; then
+            git add scraper.py
+            git commit -m "chore: auto-bump version to ${{ env.NEW_VERSION }} [skip ci]"
+            git push
+          fi
