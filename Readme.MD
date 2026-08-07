@@ -99,7 +99,7 @@ logs_example_com/
 
 ```json
 {
-  "url": "[https://example.com](https://example.com)",
+  "url": "https://example.com"
   "elapsed_seconds": 0.38,
   "title": "Example Domain",
   "description": "Domain description metadata",
@@ -110,10 +110,10 @@ logs_example_com/
     "+1 (555) 019-2834"
   ],
   "social": [
-    "[https://twitter.com/example](https://twitter.com/example)"
+    "https://twitter.com/example"
   ],
   "links": [
-    "[https://external-resource.com](https://external-resource.com)"
+    "https://external-resource.com"
   ]
 }
 
@@ -123,6 +123,6 @@ logs_example_com/
 
 ## 📄 License
 
-This software is open-source and released under the [MIT License](LICENSE).
+This software is open-source and released under the [AGPL-3.0 License](LICENSE).
 
 ```
